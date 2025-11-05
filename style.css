@@ -168,6 +168,17 @@ p {
   min-height: 40px;
   white-space: pre-line;
   list-style: 1.5;
+  /* Ensure long lines or preformatted text wrap instead of overflowing */
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* If the AI output is placed inside a <pre>, allow wrapping inside it */
+.remix-box pre {
+  white-space: pre-wrap; /* preserve newlines but wrap long lines */
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  margin: 0;
 }
 
 /* Icon styles */
