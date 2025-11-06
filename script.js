@@ -197,6 +197,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // This function gets a random recipe from the API and shows it
 async function fetchAndDisplayRandomRecipe() {
+  // Clear any previous remix output when loading a new random recipe
+  if (typeof remixOutput !== 'undefined' && remixOutput) remixOutput.innerHTML = "";
+
   recipeDisplay.innerHTML = "<p>Loading...</p>"; // Show loading message
   try {
     // Fetch a random recipe from the MealDB API
